@@ -395,3 +395,5 @@ export const ProductsData = [
         precio:  5875,
     },
 ];
+
+export const TotalProducts = ProductsData.length;

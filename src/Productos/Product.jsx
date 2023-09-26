@@ -1,6 +1,7 @@
 import React from 'react'
 import { ProductoContainer, ProductoPrecio,ProductoImgStyled, PProductStyled, PieCardStyled, AgregarButon } from './ProductsStyled'
 
+
 const Product = ({id,marca,descripcion,animal,productImg,precio}) => {
   return (
     <ProductoContainer>
@@ -12,7 +13,8 @@ const Product = ({id,marca,descripcion,animal,productImg,precio}) => {
         </ProductoImgStyled>
         <PieCardStyled>
         <ProductoPrecio>
-            ${precio}
+        {precio}
+          
         </ProductoPrecio>
         <AgregarButon>
             Agregar al carrito

@@ -10,7 +10,7 @@ import Home from './Pages/Home/Home';
 function App() {
   return (
     <>
-      <GlobalStyles />
+      
       <Navbar />
       <Home />
       <Footer />
