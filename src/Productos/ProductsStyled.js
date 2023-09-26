@@ -80,3 +80,10 @@ export const CabezalStyled = styled.h3`
   font-size: 19px;
    padding: 10px;
    `;
+
+
+export const PaginacionStyled=styled.div`
+display:flex;
+flex-direction:row;
+gap:rem;
+`;

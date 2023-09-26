@@ -13,7 +13,7 @@ const Product = ({id,marca,descripcion,animal,productImg,precio}) => {
         </ProductoImgStyled>
         <PieCardStyled>
         <ProductoPrecio>
-        {precio}
+        ${precio}
           
         </ProductoPrecio>
         <AgregarButon>
