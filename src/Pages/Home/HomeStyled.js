@@ -18,4 +18,8 @@ color:white;
 margin:2rem;
 padding:1rem;
 cursor: pointer;
+&:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 `;

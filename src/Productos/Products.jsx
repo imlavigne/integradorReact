@@ -7,21 +7,21 @@ import { Button } from '../Pages/Home/HomeStyled'
 
 const Products = () => {
   // console.log(ProductsData)
-  const initialState=3;
+  const initialState = 3;
   const [limit, setLimit] = useState(initialState);
   let Productos = useSelector(state => state.products.products)  //state.produts(1).products(2)=> el 1 producte es el products reducer de la store y el products 2 es elproducts que hace referencia al productsdate
-  const selectedMarcas =useSelector(state=>state.marcas.selectedMarcas);
+  const selectedMarcas = useSelector(state => state.marcas.selectedMarcas);
 
-  const totalProducts =useSelector(state=>state.products.totalProducts);
-// console.log(`limi:${limit}`)
-// console.log(`total:${totalProducts}`)
-// console.log(limit!=totalProducts)
+  const totalProducts = useSelector(state => state.products.totalProducts);
+  // console.log(`limi:${limit}`)
+  // console.log(`total:${totalProducts}`)
+  // console.log(limit!=totalProducts)
 
-// console.log(selectedMarcas)
-    if (selectedMarcas){
-      Productos=Productos.filter(p=>p.marca==selectedMarcas)
-    }
-    // console.log(Productos)
+  // console.log(selectedMarcas)
+  if (selectedMarcas) {
+    Productos = Productos.filter(p => p.marca == selectedMarcas)
+  }
+  // console.log(Productos)
   return (
     <ProductsContainer>
       <CabezalStyled>
@@ -30,8 +30,8 @@ const Products = () => {
       <ProductsWrapper>
         {
           Productos.map((producto) => {
-            if(limit>=producto.id || selectedMarcas){
-              return(
+            if (limit >= producto.id || selectedMarcas) {
+              return (
                 <Product key={producto.id}{...producto} />
               )
             }
@@ -39,24 +39,28 @@ const Products = () => {
           })
         }
       </ProductsWrapper>
-      <PaginacionStyled>
-      {(limit<=initialState) || !selectedMarcas && (
-        
       
-      <Button onClick={()=>setLimit(previLimit=>previLimit-initialState)}>
+        {!selectedMarcas && (
+        
+        <PaginacionStyled>
+      <Button
+       onClick={()=>setLimit(previLimit=>previLimit-initialState)}
+      disabled={limit<=initialState}
+      >
            VER MENOS
         </Button>
-  )
-}
-{!(limit<=totalProducts) || !selectedMarcas && (
+  
+        
+
         
       
-        <Button onClick={()=>setLimit(previLimit=>previLimit+initialState)}>
+        <Button onClick={()=>setLimit(previLimit=>previLimit+initialState)}
+          disabled={limit>=totalProducts}>
              VER MAS
           </Button>
-    )
-  }
-  </PaginacionStyled>
+        
+      </PaginacionStyled>
+      )}
     </ProductsContainer>
   )
 }
