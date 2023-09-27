@@ -9,7 +9,7 @@ export const CarroContainer=styled.div`
     width: 50%;
     z-index: 9999;
     color:white;
-    /* display:none; */
+    display:none;
 `;
 
 export const CarroCabezal=styled.div`
