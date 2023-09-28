@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CarroContainer=styled.div`
     position: absolute;
     background-color:var(--azul) ;
-    top:0;
+    top:100px;
     right: 0px;
     /* height: 100vh; */
     width: 100%;
