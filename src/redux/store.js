@@ -4,15 +4,18 @@ import productsreducer from "./products/productsSlices";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
 import persistStore from "redux-persist/es/persistStore";
+import carroReduce from "./carro/carroSlice";
 
 const reducers = combineReducers({
     marcas: marcasreducer,
-    products:productsreducer
+    products:productsreducer,
+    carro:carroReduce,
 })
 
 const persistConfig ={
     key:'root',
-    storage:storage
+    storage,
+    whitelist:['carro']
 }
 const persistterReducer =persistReducer(persistConfig,reducers)
 

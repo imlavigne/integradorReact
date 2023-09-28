@@ -5,11 +5,12 @@ export const CarroContainer=styled.div`
     background-color:var(--azul) ;
     top:0;
     right: 0px;
-    height: 100vh;
-    width: 50%;
+    /* height: 100vh; */
+    width: 100%;
     z-index: 9999;
     color:white;
-    display:none;
+   
+    
 `;
 
 export const CarroCabezal=styled.div`
@@ -26,6 +27,14 @@ export const CarroCabezal=styled.div`
     }
 
 `;
+export const VerCarro1=styled.div`
+display:block;
+`;
+
+export const NoCarro1=styled.div`
+display:none;
+`;
+
 export const CarroIconos=styled.div`
 color:white;
 cursor: pointer;
@@ -105,6 +114,7 @@ flex-direction:row;
 align-items:center;
 justify-content:center;
 gap:2rem;
+margin:2rem;
 `;
 
 export const ButtonCarro=styled.button`
@@ -117,7 +127,9 @@ font-weight:900;
 cursor: pointer;
 
 `;
+export const CarroStyled=styled.div`
 
+`;
 
 
 

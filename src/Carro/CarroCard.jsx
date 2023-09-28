@@ -1,8 +1,13 @@
 import React from 'react'
 import { ProductoContainer, ProductoPrecio,ProductoImgStyled, PProductStyled, PieCardStyled, AgregarButon } from '../Productos/ProductsStyled'
 import { ButtonCantidad, CantidadProductCard, DescripcionStyled, ImgCarro, ItemPrecio, VistaCarroContainer } from './CarrosStyled'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCarro, removeToCarro } from '../redux/carro/carroSlice'
 
-const CarroCard = ({id,marca,descripcion,animal,productImg,precio}) => {
+const CarroCard = ({id,marca,descripcion,animal,productImg,precio,cantidad}) => {
+  const dispatch =useDispatch()
+  const {carroItems}=useSelector(state=>state.carro)
+  
   return (
 
     <VistaCarroContainer>
@@ -14,17 +19,18 @@ const CarroCard = ({id,marca,descripcion,animal,productImg,precio}) => {
     {descripcion}
     </DescripcionStyled>
     <CantidadProductCard>
-        <ButtonCantidad>-</ButtonCantidad>
-            <spa>5</spa>
-        <ButtonCantidad>+</ButtonCantidad>
+        <ButtonCantidad onClick={()=>dispatch(removeToCarro(id))}>-</ButtonCantidad>
+            <spa>{cantidad}</spa>
+        <ButtonCantidad onClick={()=> dispatch(addToCarro({id,marca,descripcion,animal,productImg,precio,cantidad}))}>+</ButtonCantidad>
     </CantidadProductCard>
    
     <ItemPrecio>
-    ${precio}
+    ${precio*cantidad}
     </ItemPrecio>
     
     
 </VistaCarroContainer>
+  
   )
 }
 

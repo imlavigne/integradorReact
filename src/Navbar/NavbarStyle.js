@@ -16,6 +16,7 @@ export const NavbarContainerStyled =styled.div`
   
 `;
 
+
  export const LogoImg= styled.div`
  margin-top: 8px;
    width:50px ;

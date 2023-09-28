@@ -1,18 +1,31 @@
 import React from 'react'
-import { ButtonCarro, CarroCabezal, CarroContainer, CarroIconos, PieCarroContainer, TotalPrecio, VistaCarro } from './CarrosStyled'
+import { ButtonCarro, CarroCabezal, CarroContainer, CarroIconos, PieCarroContainer, TotalPrecio, VerCarro, VistaCarro } from './CarrosStyled'
 import { AiOutlineClose } from "react-icons/ai";
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import CarroCard from './CarroCard';
+import { clearCarro, toggleHiddenCarro } from '../redux/carro/carroSlice';
+import './Carrocss.css'
 
 const Carro = () => {
-    const Productos = useSelector(state => state.products.products)
-     const pepe= Productos.slice(1,4)
-     console.log(pepe)
+    
+     
+
+
+     const {carroItems, hidden:hiddenCart}= useSelector(state=>state.carro)
+    const dispatch=useDispatch();
+    const {products}=useSelector(state=>state.products)
+
+    const TotalCarro=carroItems.reduce((acc,item)=>(acc += item.cantidad*item.precio),0)
+    
+       
+    
+    
     return (
-        <CarroContainer>
+         
+        <CarroContainer className={hiddenCart ? 'VerCarro': 'VerCarronot'}>
             <CarroCabezal>
                 <h2>TU CARRITO</h2>
-                <CarroIconos>
+                <CarroIconos onClick={()=>dispatch(toggleHiddenCarro())}>
                     <AiOutlineClose />
                 </CarroIconos >
             </CarroCabezal>
@@ -20,7 +33,7 @@ const Carro = () => {
 
             <VistaCarro>
                 {
-                    pepe.map(p=>(
+                    carroItems.map(p=>(
                  <CarroCard key={p.id}{...p} />
                 
                )) }
@@ -28,17 +41,18 @@ const Carro = () => {
             </VistaCarro>
             <hr />
             <TotalPrecio>
-                <p>TOTAL</p> <p>$ 5555</p>
+                <p>TOTAL</p> <p>$ {TotalCarro}</p>
             </TotalPrecio>
             <PieCarroContainer>
                 <ButtonCarro>
                     COMPRAR
                 </ButtonCarro>
-                <ButtonCarro>
+                <ButtonCarro onClick={()=>dispatch(clearCarro())} >
                     VACIAR CARRO
                 </ButtonCarro>
             </PieCarroContainer>
         </CarroContainer>
+        
     )
 }
 
