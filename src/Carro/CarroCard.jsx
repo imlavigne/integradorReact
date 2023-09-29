@@ -1,6 +1,6 @@
 import React from 'react'
 import { ProductoContainer, ProductoPrecio,ProductoImgStyled, PProductStyled, PieCardStyled, AgregarButon } from '../Productos/ProductsStyled'
-import { ButtonCantidad, CantidadProductCard, DescripcionStyled, ImgCarro, ItemPrecio, VistaCarroContainer } from './CarrosStyled'
+import { ButtonCantidad, CantidadProductCard,  CarroResponsiv,  DescripcionStyled, ImgCarro, ItemPrecio, VistaCarroContainer } from './CarrosStyled'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCarro, removeToCarro } from '../redux/carro/carroSlice'
 
@@ -11,6 +11,7 @@ const CarroCard = ({id,marca,descripcion,animal,productImg,precio,cantidad}) => 
   return (
 
     <VistaCarroContainer>
+     <CarroResponsiv>
      <ImgCarro>
     <img src={productImg}  />
     </ImgCarro>
@@ -18,6 +19,8 @@ const CarroCard = ({id,marca,descripcion,animal,productImg,precio,cantidad}) => 
     <DescripcionStyled>    
     {descripcion}
     </DescripcionStyled>
+    </CarroResponsiv>
+   
     <CantidadProductCard>
         <ButtonCantidad onClick={()=>dispatch(removeToCarro(id))}>-</ButtonCantidad>
             <spa>{cantidad}</spa>

@@ -6,9 +6,16 @@ export const CarroContainer=styled.div`
     top:100px;
     right: 0px;
     /* height: 100vh; */
-    width: 100%;
+    width: 45%;
     z-index: 9999;
     color:white;
+    /* max-height:calc(100vh-100px) */
+    /* height:calc(100vh-5rem); */
+
+    @media (max-width: 1000px) {
+    width:100vw;
+    /* background-color:red; */
+  }
    
     
 `;
@@ -47,8 +54,15 @@ justify-content: space-between;
 align-items: center;
 /* background-color:red; */
 margin:1rem;
+/* overflow: scroll;
 
+&::-webkit-scrollbar {
+    background: transparent;
+  }
 
+  &::-webkit-scrollbar:horizontal {
+    display: none;
+  } */
 `;
 
 export const VistaCarroContainer=styled.div`
@@ -66,6 +80,11 @@ export const ImgCarro=styled.div`
     max-width: 100%;
   max-height: 100%;
   object-fit: cover;
+  @media (max-width: 1000px) {
+    height:150px
+  }
+   
+   
   }
 
 `;
@@ -76,6 +95,9 @@ width:300px;
 align-items:center;
 justify-content:center;
 font-size:1rem;
+@media (max-width: 1000px) {
+    width:150px
+  }
 `;
 export const CantidadProductCard=styled.div`
 display:flex;
@@ -130,6 +152,13 @@ cursor: pointer;
 export const CarroStyled=styled.div`
 
 `;
-
-
-
+export const CarroResponsiv=styled.div`
+  display:flex;
+    flex-direction:row;
+ @media (max-width: 1000px) {
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+   
+`;
