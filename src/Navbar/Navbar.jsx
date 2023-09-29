@@ -1,5 +1,5 @@
 import React from 'react'
-import { BuscarContainer, IniciarSesion, LogoContainer, LogoImg, NavbarContainerStyled } from './NavbarStyle'
+import { BuscarContainer, IniciarSesion, LogoContainer, LogoImg, NavbarContainerStyled, SpanStyled } from './NavbarStyle'
 import logo1mas2 from '../imagenes/logo/logo1mas2.png'
 import { BiSolidUser } from "react-icons/bi";
 import { MdTrolley } from "react-icons/md";
@@ -11,18 +11,18 @@ import { CarroStyled } from '../Carro/CarrosStyled';
 
 const Navbar = () => {
 
-    const dispatch=useDispatch();
-    const {carroItems}= useSelector(state=>state.carro)
-    const totalCartItem=useSelector (state=>state.carro.carroItems).
-    reduce((acc,item)=>(acc +=item.cantidad),
-    0)
-   
+    const dispatch = useDispatch();
+    const { carroItems } = useSelector(state => state.carro)
+    const totalCartItem = useSelector(state => state.carro.carroItems).
+        reduce((acc, item) => (acc += item.cantidad),
+            0)
 
-    
-    
+
+
+
     return (
         <NavbarContainerStyled>
-            
+
 
             <LogoImg>
                 <img src={logo1mas2} alt='logo' />
@@ -36,9 +36,11 @@ const Navbar = () => {
 
             </BuscarContainer> */}
             <LogoContainer>
-                <CarroStyled onClick={()=>dispatch(toggleHiddenCarro())}>
-                <MdTrolley  />
-                <span> {totalCartItem}</span>
+                <CarroStyled onClick={() => dispatch(toggleHiddenCarro())}>
+                    <MdTrolley />
+                   <SpanStyled>
+                        {totalCartItem}
+                     </SpanStyled>
                 </CarroStyled>
                 <IniciarSesion >
                     <BiSolidUser />

@@ -56,6 +56,11 @@ export const NavbarContainerStyled =styled.div`
  p{
     font-size:0.8rem;
  }
+ @media (max-width: 1000px) {
+    p{
+      display:none;
+    }
+  }
  `;
 
  export const BuscarContainer= styled.div`
@@ -73,4 +78,15 @@ export const NavbarContainerStyled =styled.div`
     cursor: pointer;
  }
  `;
+ export const SpanStyled=styled.div`
+ /* background-color:yellow; */
+
+  font-size:1.5rem;
  
+  /* top:38px; */
+
+  
+/* border:solid ; */
+/* border-radius:100%; */
+ 
+ `;
