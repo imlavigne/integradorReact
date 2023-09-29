@@ -13,6 +13,7 @@ export const NavbarContainerStyled =styled.div`
   top:0px;
   z-index: 10;
   padding: 2rem;
+  max-width:100vw;
   
 `;
 
