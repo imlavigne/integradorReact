@@ -85,5 +85,6 @@ export const CabezalStyled = styled.h3`
 export const PaginacionStyled=styled.div`
 display:flex;
 flex-direction:row;
-gap:rem;
+/* gap:rem; */
+max-width:100vw;
 `;
