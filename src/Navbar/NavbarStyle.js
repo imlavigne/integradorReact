@@ -27,6 +27,7 @@ export const NavbarContainerStyled =styled.div`
     width :80px ;
     cursor: pointer;
    }
+   
 
  `;
 
@@ -48,6 +49,11 @@ export const NavbarContainerStyled =styled.div`
  :first-child{
     cursor: pointer;
  }
+ @media (max-width: 1000px) {
+   gap:1rem;
+ font-size:30px;
+ margin:3rem;
+  }
  `;
  export const IniciarSesion =styled.div`
  display:flex;
@@ -60,6 +66,7 @@ export const NavbarContainerStyled =styled.div`
  @media (max-width: 1000px) {
     p{
       display:none;
+      /* background-color:red; */
     }
   }
  `;
