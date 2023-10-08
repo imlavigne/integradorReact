@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const NavbarContainerStyled =styled.div`
  background-color:var(--azul);
   font-size: 1.5rem;
-  height: 50px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items:center;
@@ -14,6 +14,13 @@ export const NavbarContainerStyled =styled.div`
   z-index: 10;
   padding: 2rem;
   max-width:100vw;
+  @media (max-width: 1000px) {
+    width:100vw;
+    /* background-color:red; */
+    padding:0rem;
+    height:100px;
+ 
+  }
   
 `;
 
@@ -27,6 +34,11 @@ export const NavbarContainerStyled =styled.div`
     width :80px ;
     cursor: pointer;
    }
+
+   @media (max-width: 1000px) {
+    margin:1rem;
+ 
+  }
    
 
  `;
@@ -52,7 +64,8 @@ export const NavbarContainerStyled =styled.div`
  @media (max-width: 1000px) {
    gap:1rem;
  font-size:30px;
- margin:3rem;
+ margin:1rem;
+ /* width:100%; */
   }
  `;
  export const IniciarSesion =styled.div`
@@ -75,6 +88,7 @@ export const NavbarContainerStyled =styled.div`
  display:flex;
  flex-direction:row;
  align-items:center;
+ display:none;
  gap:1rem;
  input{
     width:500px;
