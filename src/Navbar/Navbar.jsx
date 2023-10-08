@@ -7,6 +7,7 @@ import { BsSearch } from "react-icons/bs";
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleHiddenCarro } from '../redux/carro/carroSlice';
 import { CarroStyled } from '../Carro/CarrosStyled';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -23,11 +24,11 @@ const Navbar = () => {
     return (
         <NavbarContainerStyled>
 
-
-            <LogoImg>
-                <img src={logo1mas2} alt='logo' />
-            </LogoImg>
-
+            <Link to='/'>
+                <LogoImg>
+                    <img src={logo1mas2} alt='logo' />
+                </LogoImg>
+                </Link>
 
 
             {/* <BuscarContainer>
@@ -38,14 +39,16 @@ const Navbar = () => {
             <LogoContainer>
                 <CarroStyled onClick={() => dispatch(toggleHiddenCarro())}>
                     <MdTrolley />
-                   <SpanStyled>
+                    <SpanStyled>
                         {totalCartItem}
-                     </SpanStyled>
+                    </SpanStyled>
                 </CarroStyled>
+                <Link to='/login'>
                 <IniciarSesion >
                     <BiSolidUser />
                     <p>INICIAR SESION</p>
                 </IniciarSesion>
+                </Link>
             </LogoContainer>
         </NavbarContainerStyled>
     )

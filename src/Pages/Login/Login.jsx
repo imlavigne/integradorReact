@@ -3,6 +3,7 @@ import { LoginStyledContainer, LoginStyledWraper, PieDeLoginStyles, SubmitButton
 import * as Yup from 'yup'
 import { Form, Formik } from 'formik'
 import Input from '../../UI/Input/Input'
+import { Link } from 'react-router-dom'
 
 const initialValues={
     email:'',
@@ -53,8 +54,11 @@ const Login = () => {
   
         </Formik>
         <PieDeLoginStyles>
+        
         <p>¿Perdiste la contraseña?</p>
+        <Link to='/register'>
         <p>¿No tenes cuenta? Registrate</p>
+        </Link>
         </PieDeLoginStyles>
         </LoginStyledWraper>
         </LoginStyledContainer>

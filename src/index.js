@@ -7,6 +7,7 @@ import { GlobalStyles } from './styles/GlobalStyles';
 import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,9 @@ root.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
   <GlobalStyles/>
+  <BrowserRouter>
     <App />
+    </BrowserRouter>
     </PersistGate>
     </Provider>
   </>
