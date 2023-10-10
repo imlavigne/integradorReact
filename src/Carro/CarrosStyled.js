@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const CarroContainer = styled.div`
-    position: absolute;
+    /* display:flex;
+   flex-direction:column;  */
+    position: sticky; 
+
     background-color:var(--azul) ;
     top:100px;
-    right: 0px;
-    /* height: 100vh; */
+    left: 1000px;
+    height: 100vh;
     width: 45%;
     z-index: 9999;
     color:white;
@@ -50,8 +53,12 @@ export const VistaCarro = styled.div`
 display:flex;
 flex-direction:column;
 max-width:98%;
+max-height:35%;
 justify-content: space-between;
 align-items: center;
+/* display:inline-block; */
+overflow-y: scroll;
+  /* scroll-behavior: smooth; */
 /* background-color:red; */
 margin:1rem;
 /* overflow: scroll;
@@ -71,6 +78,7 @@ flex-direction:row;
 align-items:center;
 justify-content:space-between;
 height:inherit;
+
 `;
 
 export const ImgCarro = styled.div`
@@ -137,6 +145,7 @@ font-size:2rem;
 
 export const PieCarroContainer = styled.div`
 display:flex;
+
 flex-direction:row;
 align-items:center;
 justify-content:center;

@@ -6,19 +6,16 @@ import Products from '../../Productos/Products'
 import { AgregarButon, CabezalStyled } from '../../Productos/ProductsStyled'
 import Carro from '../../Carro/Carro'
 import {BsWhatsapp} from 'react-icons/bs'
+import { useDispatch } from 'react-redux'
+import { toggleHiddenCarro } from '../../redux/carro/carroSlice'
 
 const Home = () => {
-
-    const productsRef=useRef()
-    const doScroll=()=>{
-        window.scrollTo({productsRef})
-    }
-
+    
     return (
-        <HomeContainer>
-            <Carro/>
+        <HomeContainer >
+            {/* <Carro/> */}
             <Marcas />
-            <Products ref={productsRef} />
+            <Products  />
             <WhatssapLogoStyled>
             <a href="https://api.whatsapp.com/send?phone=5492944502697&text=" class="whatsapp">
             <BsWhatsapp/>

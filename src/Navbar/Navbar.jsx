@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleHiddenCarro } from '../redux/carro/carroSlice';
 import { CarroStyled } from '../Carro/CarrosStyled';
 import { Link } from 'react-router-dom';
+import Carro from '../Carro/Carro';
 
 
 const Navbar = () => {
@@ -22,6 +23,8 @@ const Navbar = () => {
 
 
     return (
+        <>
+       
         <NavbarContainerStyled>
 
             <Link to='/'>
@@ -51,6 +54,7 @@ const Navbar = () => {
                 </Link>
             </LogoContainer>
         </NavbarContainerStyled>
+        </>
     )
 }
 
