@@ -13,7 +13,7 @@ const Home = () => {
     
     return (
         <HomeContainer >
-            {/* <Carro/> */}
+            <Carro/>
             <Marcas />
             <Products  />
             <WhatssapLogoStyled>

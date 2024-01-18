@@ -15,14 +15,18 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 function App() {
- 
+  const pepe=()=>{
+    console.log("holaaa")
+  }
+ window.scroll(pepe())
 
   return (
   
      <>
+     
+      {/* <Carro/> */}
       <Navbar />
-      <Carro/>
-      <Routes/>
+      <Routes />
       <Footer />
       </>
    

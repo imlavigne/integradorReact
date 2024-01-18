@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const CarroContainer = styled.div`
     /* display:flex;
    flex-direction:column;  */
-    position: sticky; 
+    position: fixed; 
 
     background-color:var(--azul) ;
     top:100px;
-    left: 1000px;
+    right: 0;
     height: 100vh;
     width: 45%;
     z-index: 9999;
