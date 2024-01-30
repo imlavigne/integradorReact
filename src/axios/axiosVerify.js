@@ -4,8 +4,8 @@ import { BASE_URL } from "../utils/constantes";
 export const verifyUser =async (email,code)=>{
     try {
         const response =await axios.patch(`${BASE_URL}/usuario/verify`,{
-            email:email,
-            code:code
+            email,
+            code
         })
         return response.data;
     } catch (error) {

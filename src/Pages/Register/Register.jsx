@@ -6,9 +6,9 @@ import Input from '../../UI/Input/Input'
 import { createUser } from '../../axios/axiosUser'
 
 const initialValues = {
-  name: '',
+  nombre: '',
   email: '',
-  celphone: '',
+  cellphone: '',
   password: ''
 }
 const phoneRegExp = /\d{10}$/;
