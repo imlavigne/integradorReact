@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import { Form, Formik } from 'formik'
 import Input from '../../UI/Input/Input'
 import { createUser } from '../../axios/axiosUser'
+import { Link } from 'react-router-dom'
 
 const initialValues = {
   nombre: '',
@@ -87,6 +88,13 @@ const Register = () => {
           </Form>
 
         </Formik>
+        <PieDeLoginStyles>
+        <Link to='/verify'> 
+        
+        <p>Verificar Cuenta</p>
+        </Link>
+     
+        </PieDeLoginStyles>
 
       </LoginStyledWraper>
     </LoginStyledContainer>

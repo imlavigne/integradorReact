@@ -8,12 +8,12 @@ import { verifyUser } from '../../axios/axiosVerify'
 
 const initialValues = {
     email: '',
-    verifyCode: ''
+    code: ''
 
 }
 const validationSchema = Yup.object({
     email: Yup.string().email('Correo inválido').required('Campo requerido'),
-    verifyCode: Yup.string().trim().required('Campo requerido'),
+    code: Yup.string().trim().required('Campo requerido'),
 
 })
 const Verify = () => {
@@ -26,10 +26,10 @@ const Verify = () => {
                     initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={async (values, actions) => {
-                        // console.log({ values })
+                         console.log({ values })
                         const usuario = await verifyUser(
                             values.email,
-                            values.verifyCode,
+                            values.code,
                         )
                         actions.resetForm()
                     }}
@@ -45,7 +45,7 @@ const Verify = () => {
 
                         ></Input>
                         <Input
-                            name='verifyCode'
+                            name='code'
                             type='text'
                             placeholder='Ingrese su codigo de Verificacion'
 
