@@ -54,8 +54,10 @@ const Login = () => {
   
         </Formik>
         <PieDeLoginStyles>
+        <Link to='/verify'> 
         
-        <p>¿Perdiste la contraseña?</p>
+        <p>Verificar Cuenta</p>
+        </Link>
         <Link to='/register'>
         <p>¿No tenes cuenta? Registrate</p>
         </Link>

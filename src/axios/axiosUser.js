@@ -2,7 +2,7 @@ import axios from "axios";
 import { BASE_URL } from "../utils/constantes";
 
 export const createUser = async (nombre, email, password,cellphone) => {
-    console.log(`nombre:${nombre}, email:${email},password:${password},cel:${cellphone}`)
+    // console.log(`nombre:${nombre}, email:${email},password:${password},cel:${cellphone}`)
     try {
        const response = await axios.post(`${BASE_URL}/usuario/registro`, {
       
