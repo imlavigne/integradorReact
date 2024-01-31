@@ -18,3 +18,22 @@ export const createUser = async (nombre, email, password,cellphone) => {
       return alert(error.response.data.errors[0].msg);
     }
   };
+
+  export const loginUser = async (email, password) => {
+    
+    try {
+       const response = await axios.post(`${BASE_URL}/usuario/login`, {
+      
+     
+        email,
+        password,
+        
+      });
+
+  
+      return response.data;
+      console.log(response)
+    } catch (error) {
+      return alert(error.response.data.errors[0].msg);
+    }
+  };

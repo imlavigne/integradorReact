@@ -5,11 +5,13 @@ import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
 import persistStore from "redux-persist/es/persistStore";
 import carroReduce from "./carro/carroSlice";
+import  useReducer  from "./userSlice";
 
 const reducers = combineReducers({
     marcas: marcasreducer,
     products:productsreducer,
     carro:carroReduce,
+    user:useReducer
 })
 
 const persistConfig ={

@@ -3,7 +3,11 @@ import { LoginStyledContainer, LoginStyledWraper, PieDeLoginStyles, SubmitButton
 import * as Yup from 'yup'
 import { Form, Formik } from 'formik'
 import Input from '../../UI/Input/Input'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useNavigation } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { loginUser } from '../../axios/axiosUser'
+import { setCurrentUser } from '../../redux/userSlice'
+
 
 const initialValues={
     email:'',
@@ -16,6 +20,9 @@ const validationSchema= Yup.object({
 })
 
 const Login = () => {
+  const dispatch =useDispatch()
+  const navigate=useNavigate()
+  
     return (
         <LoginStyledContainer>
 <LoginStyledWraper>
@@ -24,9 +31,29 @@ const Login = () => {
         <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={(values, { resetForm }) => {
-          console.log({ values })
-          resetForm()
+        onSubmit={async (values,actions)=> {
+          // console.log({ values })
+          const user =await loginUser(
+            values.email,
+            values.password
+          )
+          console.log(`token ${user.token}`)
+          if (user) {
+            dispatch(
+              setCurrentUser({
+                ...user.usuario,
+                token: user.token,
+                
+              })
+             
+              
+              
+            );
+            
+           navigate ("/")
+          }
+         
+         
         }}
         >
          <Form>   
