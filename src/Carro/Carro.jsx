@@ -3,8 +3,10 @@ import { ButtonCarro, CarroCabezal, CarroContainer, CarroIconos, PieCarroContain
 import { AiOutlineClose } from "react-icons/ai";
 import { useDispatch, useSelector } from 'react-redux'
 import CarroCard from './CarroCard';
-import { clearCarro, toggleHiddenCarro } from '../redux/carro/carroSlice';
+import { clearCarro, toggleHiddenCarro,confirmarCompra } from '../redux/carro/carroSlice';
 import './Carrocss.css'
+
+
 
 const Carro = () => {
     
@@ -44,7 +46,7 @@ const Carro = () => {
                 <p>TOTAL</p> <p>$ {TotalCarro}</p>
             </TotalPrecio>
             <PieCarroContainer>
-                <ButtonCarro>
+                <ButtonCarro onClick={()=>dispatch(confirmarCompra())}>
                     COMPRAR
                 </ButtonCarro>
                 <ButtonCarro onClick={()=>dispatch(clearCarro())} >

@@ -7,7 +7,10 @@ export const verifyUser =async (email,code)=>{
             email,
             code
         })
+       
         return response.data;
+        
+        
     } catch (error) {
         return alert(error.response.data.errors[0].msg);
     }

@@ -26,11 +26,13 @@ const Verify = () => {
                     initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={async (values, actions) => {
-                         console.log({ values })
+                        //  console.log({ values })
                         const usuario = await verifyUser(
                             values.email,
                             values.code,
                         )
+                        console.log(usuario)
+                        
                         actions.resetForm()
                     }}
                 >

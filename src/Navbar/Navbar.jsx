@@ -12,7 +12,7 @@ import Carro from '../Carro/Carro';
 
 
 const Navbar = () => {
-
+const currentUser = useSelector(state => state.user.currentUser);
     const dispatch = useDispatch();
     const { carroItems } = useSelector(state => state.carro)
     const totalCartItem = useSelector(state => state.carro.carroItems).
@@ -49,7 +49,7 @@ const Navbar = () => {
                 <Link to='/login'>
                 <IniciarSesion >
                     <BiSolidUser />
-                    <p>INICIAR SESION</p>
+                    <p>{currentUser ? `${currentUser.nombre}` : 'Inicia Sesión'}</p>
                 </IniciarSesion>
                 </Link>
             </LogoContainer>

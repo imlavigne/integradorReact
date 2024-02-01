@@ -26,6 +26,12 @@ export const removeItemToCarro =(carroItems,id)=>{
     return carroItems.filter(item=>item.id!==productToremove.id)
 }
 
+export const compraConfirmada =(carroItems)=>{
+    
+    console.log("carrito")
+}
+
+
 // export resetCarro=(carroItems)=>{
 //     return 
 
