@@ -1,4 +1,6 @@
 
+import Despachar from "../../Pages/Despachar/Despachar"
+
  
 
 export const addItemToCarro = (carroItems, product) => {
@@ -27,8 +29,8 @@ export const removeItemToCarro =(carroItems,id)=>{
 }
 
 export const compraConfirmada =(carroItems)=>{
-    
-    console.log("carrito")
+    Despachar()
+    // console.log("carrito")
 }
 
 

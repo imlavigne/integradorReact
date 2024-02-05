@@ -22,7 +22,7 @@ const Home = () => {
             </a>
             </WhatssapLogoStyled>
             
-        </HomeContainer>
+        </HomeContainer> 
         
     )
 }
